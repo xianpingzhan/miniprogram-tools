@@ -1,4 +1,4 @@
-import { get, FormatDate } from "../../utils/tool";
+import { get, FormatDate, ZeroFill } from "../../utils/tool";
 import Api from "../../request/api";
 Page({
 

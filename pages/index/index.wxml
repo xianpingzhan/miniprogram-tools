@@ -1,24 +1,25 @@
 <view id="box">
+    <wxs src="../../utils/tool.wxs" module="tools"/>
     <view class="time">
         <view class="card {{time.hour.rotate ? 'rotate' : ''}}">
-            <view class="card-item">{{time.hour.value}}</view>
-            <view class="card-item">{{time.hour.value}}</view>
-            <view class="card-item">{{time.hour.value + 1}}</view>
-            <view class="card-item">{{time.hour.value + 1}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.hour.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.hour.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.hour.value + 1)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.hour.value + 1)}}</view>
         </view>
 
         <view class="card {{time.minutes.rotate ? 'rotate' : ''}}">
-            <view class="card-item">{{time.minutes.value}}</view>
-            <view class="card-item">{{time.minutes.value}}</view>
-            <view class="card-item">{{time.minutes.value + 1}}</view>
-            <view class="card-item">{{time.minutes.value + 1}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.minutes.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.minutes.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.minutes.value + 1)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.minutes.value + 1)}}</view>
         </view>
 
         <view class="card {{time.seconds.rotate ? 'rotate' : ''}}">
-            <view class="card-item">{{time.seconds.value}}</view>
-            <view class="card-item">{{time.seconds.value}}</view>
-            <view class="card-item">{{time.seconds.value + 1}}</view>
-            <view class="card-item">{{time.seconds.value + 1}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.seconds.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.seconds.value)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.seconds.value + 1)}}</view>
+            <view class="card-item">{{tools.ZeroFill(time.seconds.value + 1)}}</view>
         </view>
     </view>
 

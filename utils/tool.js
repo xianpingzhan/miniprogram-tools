@@ -64,5 +64,8 @@ module.exports = {
                     return ''
             }
         })
+    },
+    ZeroFill: function (n) {
+        return n < 10 && n >= 0 ? "0" + n : n;
     }
 }
