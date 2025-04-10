@@ -1,0 +1,37 @@
+<view id="box">
+    <view class="time">
+        <view class="card {{time.hour.rotate ? 'rotate' : ''}}">
+            <view class="card-item">{{time.hour.value}}</view>
+            <view class="card-item">{{time.hour.value}}</view>
+            <view class="card-item">{{time.hour.value + 1}}</view>
+            <view class="card-item">{{time.hour.value + 1}}</view>
+        </view>
+
+        <view class="card {{time.minutes.rotate ? 'rotate' : ''}}">
+            <view class="card-item">{{time.minutes.value}}</view>
+            <view class="card-item">{{time.minutes.value}}</view>
+            <view class="card-item">{{time.minutes.value + 1}}</view>
+            <view class="card-item">{{time.minutes.value + 1}}</view>
+        </view>
+
+        <view class="card {{time.seconds.rotate ? 'rotate' : ''}}">
+            <view class="card-item">{{time.seconds.value}}</view>
+            <view class="card-item">{{time.seconds.value}}</view>
+            <view class="card-item">{{time.seconds.value + 1}}</view>
+            <view class="card-item">{{time.seconds.value + 1}}</view>
+        </view>
+    </view>
+
+    <view class="date">
+        <view>
+            {{date.time}}
+            {{date.details.xingqi}}
+        </view>
+        <view>农历{{date.details.nyue + date.details.nri}}</view>
+        <view class="jieqi">{{date.details.jieqimsg}}</view>
+    </view>
+
+    <view class="list">
+        <van-cell wx:for="{{list}}" is-link title="{{item.name}}" link-type="navigateTo" url="{{item.path}}" wx:key="name" border="{{ index != list.length - 1 }}" />
+    </view>
+</view>

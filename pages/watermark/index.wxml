@@ -1,0 +1,46 @@
+<view id="box">
+    <view bind:tap="chooseImage" class="image-box">
+        <canvas type="2d" id="code" style="width: {{image.width}}px; height: {{image.height}}px;"></canvas>
+        <van-image fit="contain" width="100%" height="100%" style="width: 100%;height: 100%;" src="{{form.image}}" />
+    </view>
+    <van-cell-group>
+        <van-field bind:change="formContentChange" clearable required label="水印内容" error-message="{{form.contentErr}}" value="{{ form.content }}" input-class="{{colorPicker.show ? 'form-input' : ''}}" placeholder="请输入编码内容" />
+        <van-cell title="水印颜色">
+            <view bind:tap="showColorPicker" class="form-color" style="--color: {{form.color}};">
+                {{form.color}}
+            </view>
+        </van-cell>
+        <van-cell title="透明度">
+            <view class="slider">
+                <van-slider value="{{form.opacity}}" min="0" max="1" step="0.01" bind:change="opacityChange" />
+                <text class="number">{{form.opacity}}</text>
+            </view>
+        </van-cell>
+        <van-cell title="旋转角度">
+            <view class="slider">
+                <van-slider value="{{form.angle}}" min="-90" max="90" bind:change="angleChange" />
+                <text class="number">{{form.angle}}</text>
+            </view>
+        </van-cell>
+        <van-cell title="文字大小">
+            <view class="slider">
+                <van-slider value="{{form.size}}" min="10" max="120" bind:change="sizeChange" />
+                <text class="number">{{form.size}}</text>
+            </view>
+        </van-cell>
+        <van-cell title="文字间距">
+            <view class="slider">
+                <van-slider value="{{form.space}}" min="20" max="150" bind:change="spaceChange" />
+                <text class="number">{{form.space}}</text>
+            </view>
+        </van-cell>
+    </van-cell-group>
+
+    <button bind:tap="saveImage" class="form-btn" type="primary">保存图片</button>
+</view>
+
+<van-overlay show="{{ colorPicker.show }}">
+    <view class="color-picker-box" catch:tap="" hover-stop-propagation="true">
+        <color-picker id="color-picker" colorData="{{colorPicker.colorData}}" rpxRatio="{{colorPicker.rpxRatio}}" bindchangecolor="onChangeColor"></color-picker>
+    </view>
+</van-overlay>

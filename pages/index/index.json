@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-cell": "@vant/weapp/cell/index"
+    },
+    "navigationBarBackgroundColor": "#38bdf8"
+}

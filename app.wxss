@@ -1,0 +1,11 @@
+view,
+textarea,
+text,
+button,
+input {
+    box-sizing: border-box;
+}
+
+button::after {
+    border-color: transparent;
+}

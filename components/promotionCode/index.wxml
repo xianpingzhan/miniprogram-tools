@@ -1,0 +1,9 @@
+<t-popup visible="{{show}}" placement="center" t-class="promotion-code">
+    <view class="content">
+        <view bind:tap="close" class="close">关闭</view>
+        <image class="back" src="https://storage.iquizoo.com/static/miniprogram/consumer-manage/promotion-code-back.png" mode="widthFix" />
+        <canvas id="qr-code" class="qr-code" type="2d"
+        style="left: {{loading ? '200%' : '50%'}}; width: {{width}}px; height: {{height}}px;"></canvas>
+        <button bind:tap="saveImage" type="primary" hover-class="none">保存到相册</button>
+    </view>
+</t-popup>

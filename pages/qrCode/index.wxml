@@ -1,0 +1,34 @@
+<view id="box">
+    <view class="code-box">
+        <canvas type="2d" id="code"></canvas>
+        <van-image width="100%" height="100%" style="width: 100%;height: 100%;" src="{{form.codeImage}}" />
+    </view>
+    <van-cell-group>
+        <van-field bind:change="formContentChange" clearable required label="编码内容" error-message="{{form.contentErr}}" value="{{ form.content }}" type="textarea" autosize show-word-limit maxlength="{{1000}}" input-class="{{colorPicker.show ? 'form-input' : ''}}" placeholder="请输入编码内容" />
+        <!-- <van-cell title="码风格" required>
+            <van-radio-group value="{{ form.style }}" bind:change="radioStyleChange" direction="horizontal">
+                <van-radio name="{{1}}">普通</van-radio>
+                <van-radio name="{{2}}">圆滑</van-radio>
+            </van-radio-group>
+        </van-cell> -->
+        <van-cell title="码颜色">
+            <view bind:tap="showColorPicker" class="form-color" style="--color: {{form.color}};">
+                {{form.color}}
+            </view>
+        </van-cell>
+        <van-cell title="Logo">
+            <view class="logo">
+                <van-image bind:tap="chooseImage" width="60rpx" height="60rpx" src="{{form.logo}}" />
+                <van-icon  bind:tap="clearImage" wx:if="{{!!form.logo}}" name="clear" />
+            </view>
+        </van-cell>
+    </van-cell-group>
+    <button bind:tap="createCode" class="form-btn" type="primary">生成二维码</button>
+    <button bind:tap="saveCode" class="form-btn" type="primary">保存二维码</button>
+</view>
+
+<van-overlay show="{{ colorPicker.show }}">
+    <view class="color-picker-box" catch:tap="" hover-stop-propagation="true">
+        <color-picker id="color-picker" colorData="{{colorPicker.colorData}}" rpxRatio="{{colorPicker.rpxRatio}}" bindchangecolor="onChangeColor"></color-picker>
+    </view>
+</van-overlay>

@@ -1,0 +1,15 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/qrCode/index",
+        "pages/watermark/index"
+    ],
+    "entryPagePath": "pages/index/index",
+    "window": {
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "小工具-ping",
+        "navigationBarBackgroundColor": "#38bdf8"
+    },
+    "componentFramework": "glass-easel",
+    "sitemapLocation": "sitemap.json"
+}

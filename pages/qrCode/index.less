@@ -1,0 +1,83 @@
+#box {
+    padding: 48rpx;
+
+    .van-cell__title {
+        max-width: 6.2em;
+        min-width: 6.2em;
+    }
+
+    .form-input{
+        color: transparent;
+        pointer-events: none;
+    }
+
+    .code-box {
+        aspect-ratio: 1/1;
+        border: 1rpx solid #38bdf8;
+        border-radius: 24rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24rpx;
+        position: relative;
+
+        canvas{
+            position: absolute;
+            left: 300%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .van-image__loading{
+            border-radius: 15rpx;
+        }
+    }
+
+    .form-color {
+        --color: #000;
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 48rpx;
+            height: 48rpx;
+            background-color: var(--color);
+            margin-right: 24rpx;
+        }
+    }
+
+    .logo {
+        text-align: left;
+        --image-loading-icon-size: 44rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form-btn{
+        margin-top: 24rpx;
+
+        &:last-child{
+            background-color: #0ea5e9;
+        }
+    }
+}
+
+.color-picker-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.overlay-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
